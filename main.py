@@ -3,7 +3,11 @@ from render import render
 from utils import *
 
 if __name__ == "__main__":
-    big_dict = GenerateConvertingDict("./fonts/big.flf")
-    big_font = Font(big_dict)
-    text = input("Input your text: ")
-    render(text, big_font, spacing=0)
+    print("Select your font:")
+    file_path = file_selector("./fonts")
+    font = Font(GenerateConvertingDict(file_path))
+
+    text = "something"
+    while text != "":
+        text = input("Input your text (to stop input nothing): ")
+        render(text, font, spacing=0)
